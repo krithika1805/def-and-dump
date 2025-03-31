@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Heart - We Are Ear for You</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e5f5;
+            color: #4a148c;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        /* Container */
+        .container {
+            padding: 20px;
+        }
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #8e24aa;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        /* Search Bar */
+        .search-container {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+        }
+        .search-container input {
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: 2px solid #6a1b9a;
+        }
+        .search-container button {
+            background: #8e24aa;
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            margin-left: 5px;
+            border-radius: 5px;
+        }
+        /* Learning Section */
+        .learning button {
+            background-color: #8e24aa;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- React and Babel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        function App() {
+            const [search, setSearch] = React.useState("");
+
+            return (
+                <div className="container">
+                    <h1>Hand Heart</h1>
+                    <p className="tagline">We are ear for you 💜</p>
+
+                    {/* Navigation */}
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">DEF-Skills</a></li>
+                        </ul>
+                    </nav>
+
+                    {/* Search Bar */}
+                    <div className="search-container">
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                        <button>🔍</button>
+                    </div>
+
+                    {/* Translation Section */}
+                    <section className="translation">
+                        <h2>Translate Text or Image</h2>
+                        <textarea placeholder="Enter text to translate..."></textarea>
+                        <input type="file" />
+                        <button>Translate</button>
+                    </section>
+
+                    {/* Personalized Learning */}
+                    <section className="learning">
+                        <h2>Personalized Learning</h2>
+                        <button onClick={() => alert("Opening Video Lessons...")}>🎥 Watch Video Lessons</button>
+                        <button onClick={() => alert("Opening Notepad...")}>📝 Open Notepad</button>
+                        <button onClick={() => alert("Starting Sign Language Games...")}>🎮 Play Sign Language Games</button>
+                    </section>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+</html>
