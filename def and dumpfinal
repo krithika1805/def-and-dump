@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Heart - We Are Ear for You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e5f5;
+            color: #4a148c;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: #fff;
+            width: 50%;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #6a1b9a;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: #8e24aa;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #6a1b9a;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #8e24aa;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #6a1b9a;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #8e24aa;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #6a1b9a;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN PAGE -->
+    <div class="container" id="loginPage">
+        <h1>Hand Heart</h1>
+        <p class="tagline">We are ear for you 💜</p>
+        <h2>Login</h2>
+        <form onsubmit="showProfile(event)">
+            <input type="text" id="email" placeholder="📧 Email or 📱 Phone Number" required>
+            <input type="password" id="password" placeholder="🔑 Password" required>
+            <button type="submit">Login 🚀</button>
+        </form>
+        <p>New user? <a href="#">Create an account</a></p>
+    </div>
+
+    <!-- PROFILE PAGE -->
+    <div class="container hidden" id="profilePage">
+        <h1>Hand Heart</h1>
+        <h2>Your Profile</h2>
+        <p><b>💜 Name:</b> John Doe</p>
+        <p><b>🎂 Age:</b> 25</p>
+        <p><b>📅 DOB:</b> 01/01/2000</p>
+        <p><b>⏳ Learning Time:</b> 10 hours</p>
+        <span class="button" onclick="showProgress()">View Full Details 📋</span>
+    </div>
+
+    <!-- PROGRESS PAGE -->
+    <div class="container hidden" id="progressPage">
+        <h1>Hand Heart</h1>
+        <h2>Your Learning Progress</h2>
+        <ul>
+            <li>🚀 <b>Personalized Learning Paths:</b> Tailored to your needs</li>
+            <li>🤟 <b>Learning Sign Language:</b> Interactive videos & guides</li>
+            <li>💡 <b>Morse Code Learning:</b> Fun & easy text-based lessons</li>
+            <li>⏳ <b>Self-Paced Learning:</b> Learn anytime at your speed</li>
+            <li>📝 <b>Assessments:</b> Track your progress & improve</li>
+            <li>🎮 <b>Games:</b> Fun and engaging learning activities</li>
+        </ul>
+    </div>
+
+    <script>
+        function showProfile(event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById("loginPage").classList.add("hidden");
+            document.getElementById("profilePage").classList.remove("hidden");
+        }
+
+        function showProgress() {
+            document.getElementById("profilePage").classList.add("hidden");
+            document.getElementById("progressPage").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
